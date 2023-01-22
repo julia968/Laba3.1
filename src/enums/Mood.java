@@ -1,2 +1,5 @@
-package enums;public enum Mood {
+package enums;
+
+public enum Mood {
+
 }

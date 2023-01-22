@@ -1,14 +1,14 @@
 package Characters;
 
-import interfaces.Iplantable;
-import interfaces.Isayable;
-
-public class Woman implements Iplantable{
+public class Woman extends Character{
     String name;
     public Woman(String name) {
-        this.name= name;
+        super(name);
     }
 
-   
+    @Override
+    public void canPlant() {
+        System.out.println(name + " " + "могла тоже что-нибудь посадить");
+    }
 }
 
