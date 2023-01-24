@@ -24,7 +24,13 @@ public class Main {
 
         mary.seeSomething("Потом");
         mary.stop();
+
+        Garden.GardenPlants plantOne = new Garden.GardenPlants("цветок", "красный", "большой", "");
+        Garden.GardenPlants plantTwo = new Garden.GardenPlants("цветок", "желтый", "большой", "");
+        mary.watchFromAfar(plantOne, plantTwo);
         mary.beNextTo();
+        mary.findPlants(plantOne, plantTwo);
+
 
         Garden.GardenPlants plant = new Garden.GardenPlants("побеги", "нежно-зеленые", "Маленькие", "");
         plant.grow1();
@@ -67,48 +73,12 @@ public class Main {
 
 
 
-        // Mary mary = new Mary("Мэри");
-        //mary.whisper();
-        //mary.breath(45);
-        //mary.thinkWithHope();
-        //mary.notice();
-        /*
-        mary.seem();
-        mary.method1();
-        mary.weed();
-        mary.takeCareOfGarden();
-
-        Garden.GardenPlants gardenPlants = new Garden.GardenPlants("побеги", "нежно-зеленые", "маленькие", " ");
-        gardenPlants.grow1();
-
-        mary.pity();
-        mary.takeOffClothes();
-
-        Garden garden = new Garden("Сад");
-        mary.say();
-        gardenPlants.blossom();
-        mary.goToTheFlowerBed();
-        Garden.GardenPlants plantOne = new Garden.GardenPlants("цветок", "желтый", "большой", "");
-        Garden.GardenPlants plantTwo = new Garden.GardenPlants("цветок", "желтый", "большой", "");
-        mary.watchFromAfar(plantOne, plantTwo);
-        mary.findPlants(plantOne, plantTwo);
 
 
 
-       // Garden garden = new Garden("Сад");
-       // garden.method();
-        /*
-        GardenRoads gardenRoads = new GardenRoads("дорожки", " ", "густо затянутые травой");
-        mary.actionWithJumpers(70, "руку");
-        //mary.wander("саду", "немного");
-        mary.remember(2);
-        mary.jump();
-        mary.watch(95);
-        mary.watch(50);
-        gardenRoads.getCaught("дорожки", "Поначалу", "Мэри");
-       // mary.seeSomething("Потом", "", "");
 
-         */
+
+
 
 
 
