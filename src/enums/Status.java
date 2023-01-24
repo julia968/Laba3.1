@@ -5,14 +5,24 @@ public enum Status {
     STAY("стоит"),
     SQUATTEDDOWN("опустилась на корточки"),
     MOUTHMOVEMENT("двигает ртом"),
-    BOWEDDOWN("склонилась");
+    BOWEDDOWN("склонилась"),
+    FINISHED("закончила"),
+    WEED("принялась полоть"),
+    TURNEDAROUND("повернулась");
 
 
 
-    String tittle;
+
+
+   private String tittle;
 
     Status(String tittle) {
         this.tittle = tittle;
+    }
+
+    @Override
+    public String toString() {
+        return tittle;
     }
 
 }

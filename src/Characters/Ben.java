@@ -18,7 +18,7 @@ public class Ben extends Character{
 
     @Override
     public String say(String subject, String sentence, Status status) {
-        phrase = "говорил " + subject + " " + sentence;
+        String phrase = "говорил " + subject + " " + sentence;
         setStatus(Status.MOUTHMOVEMENT);
         return phrase;
     }

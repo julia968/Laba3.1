@@ -1,6 +1,7 @@
 import Characters.Ben;
 import Characters.Mary;
 import Characters.Woman;
+import enums.MarysThings;
 import enums.Smell;
 import enums.Status;
 import garden.FlowerBed;
@@ -11,11 +12,85 @@ import interfaces.Iplantable;
 
 public class Main {
     public static void main(String[] args) {
+        Mary mary = new Mary("Мэри");
+        mary.actionWithJumpers(75, "рука");
+
+        Garden garden = new Garden("Сад");
+        //garden.consistOnLeaves();
+
+        mary.remember(MarysThings.JUMPERS);
+        mary.jump();
+        mary.watch(95);
+        mary.watch(60);
+
+        GardenRoads gardenRoads = new GardenRoads("дорожки", "");
+        gardenRoads.getCaught("Поначалу", "Мэри");
+
+        mary.seeSomething("Потом");
+        mary.stop();
+        mary.beNextTo();
+
+        Garden.GardenPlants plant = new Garden.GardenPlants("побеги", "нежно-зеленые", "Маленькие", "");
+        plant.grow1();
+
+        mary.remember();
+        mary.lookAt();
+        mary.whisper();
+        mary.breath(25);
+        mary.thinkWithHope();
+        mary.actionWithJumpers(45, "");
+
+        mary.goToGardenLandscape();
+
+        mary.notice();
+        mary.say();
+        mary.seem();
+        mary.takeCareOfGarden();
+        mary.pity();
+        mary.help();
+        mary.find();
+        mary.dig();
+
+        mary.weed();
+
+        mary.lookAt2();
+        mary.understand();
+        mary.lookAt3();
+        mary.breath(98);
+
+        mary.goToTheFlowerBed();
+
+        mary.takeOffClothes();
+
 
         //Iplantable craven = new Woman("Крейвен") {
        // };
         //craven.canPlant();
+        // Mary mary = new Mary("Мэри");
+        //mary.whisper();
+        //mary.breath(45);
+        //mary.thinkWithHope();
+        //mary.notice();
+        /*
+        mary.seem();
+        mary.method1();
+        mary.weed();
+        mary.takeCareOfGarden();
 
+        Garden.GardenPlants gardenPlants = new Garden.GardenPlants("побеги", "нежно-зеленые", "маленькие", " ");
+        gardenPlants.grow1();
+
+        mary.pity();
+        mary.takeOffClothes();
+
+        Garden garden = new Garden("Сад");
+        mary.say();
+        gardenPlants.blossom();
+        mary.goToTheFlowerBed();
+        Garden.GardenPlants plantOne = new Garden.GardenPlants("цветок", "желтый", "большой", "");
+        Garden.GardenPlants plantTwo = new Garden.GardenPlants("цветок", "желтый", "большой", "");
+        mary.watchFromAfar(plantOne, plantTwo);
+        mary.findPlants(plantOne, plantTwo);
 
 
 

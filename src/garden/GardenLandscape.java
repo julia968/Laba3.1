@@ -2,7 +2,6 @@ package garden;
 
 public class GardenLandscape extends Garden {
     private String size;
-    private String name;
 
     public GardenLandscape(String name, String size) {
         super(name);
@@ -13,7 +12,7 @@ public class GardenLandscape extends Garden {
 
     public void isOld() {
         isOld = true;
-        System.out.println(this.name + "старый");
+        System.out.println(getName() + "старый");
     }
 
 
@@ -21,8 +20,6 @@ public class GardenLandscape extends Garden {
         return size;
     }
 
-    public String getName() {
-        return name;
-    }
+
 
 }

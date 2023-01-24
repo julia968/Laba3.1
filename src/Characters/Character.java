@@ -4,9 +4,9 @@ import enums.Status;
 import interfaces.Iplantable;
 
 public abstract class Character implements Iplantable {
-    String name;
-    String object;
-    String phrase;
+    private String name;
+    private String object;
+    private String phrase;
 
     public Character(String name) {
         this.name = name;
@@ -19,13 +19,6 @@ public abstract class Character implements Iplantable {
         return object;
     }
 
-    public String getObject() {
-        return object;
-    }
-
-    public String getSubject() {
-        return phrase;
-    }
 
     public String getName() {
         return name;
