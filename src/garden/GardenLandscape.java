@@ -8,12 +8,6 @@ public class GardenLandscape extends Garden {
         this.size = size;
     }
 
-    boolean isOld = false;
-
-    public void isOld() {
-        isOld = true;
-        System.out.println(getName() + "старый");
-    }
 
 
     public String getSize() {

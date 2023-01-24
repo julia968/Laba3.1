@@ -7,13 +7,7 @@ public class SummerHouse extends GardenLandscape {
         super(name, size);
         this.status = status;
     }
-    class Benhes {
-        boolean madeOfStone = false;
 
-        public void madeOfStone() {
-            madeOfStone = true;
-        }
-    }
 
     public String getStatus() {
         return status;

@@ -1,7 +1,8 @@
 package enums;
 
 public enum Smell {
-    EARTH("запах земли");
+    EARTH("запах земли"),
+    GRASS("запах травы");
     private String title;
 
     Smell(String title) {

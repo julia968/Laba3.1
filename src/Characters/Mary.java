@@ -1,5 +1,6 @@
 package Characters;
 
+import classes.AgeCheck;
 import enums.Condition;
 import enums.MarysThings;
 import enums.Smell;
@@ -13,6 +14,7 @@ public class Mary extends Character {
     private int energy;
     private Smell smell;
     private Status status;
+    private int age;
 
     private String location;
     private MarysThings marysThings;
@@ -29,8 +31,14 @@ public class Mary extends Character {
         super(name);
 
     }
-   
-    
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 
 
@@ -127,7 +135,7 @@ public class Mary extends Character {
 
     Ben ben = new Ben("Бен Уэзерстафф", "старый");
     public void remember() {
-        String subject = ben.getAge() + " " + ben.getName() + " " + ben.say(getName(), "об этом", Status.MOUTHMOVEMENT);
+        String subject = ben.getAge() + " " + ben.getName() + " " + ben.say();
         System.out.println(getName() + " вспомнила:" + subject);
     }
 
@@ -169,11 +177,12 @@ public class Mary extends Character {
     Flowers flowers = new Flowers("цветы");
 
 
-
-    public void whisper() {
+    @Override
+    public String say() {
         String sentence = flowers.grow();
-        System.out.println(getName() + " прошептала: " + sentence );
+        String phrase = getName() + " прошептала: " + sentence;
         setStatus(Status.MOUTHMOVEMENT);
+        return phrase;
     }
     class OtherPlants {
         private String name;
@@ -211,7 +220,7 @@ public class Mary extends Character {
     }
     Garden garden = new Garden("Сад");
 
-    public void say() {
+    public void sayWithWorry() {
         setCondition(Condition.WORRY);
         System.out.println(getName() + " " + condition + " и сказала: " + garden.live());
     }
@@ -301,6 +310,17 @@ public class Mary extends Character {
         setStatus(Status.FINISHED);
     }
 
+    public void canToWeed() {
+        setAge(12);
+        try {
+            AgeCheck.checkingTheAgeValue(getAge());
+            System.out.println("Хоть " + getName() + " было всего " + getAge() + " лет, она смогла прополоть всё!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public void lookAt2() {
         String object = flowerBed.getName();
         setCondition(Condition.ENJOY);
@@ -330,9 +350,10 @@ public class Mary extends Character {
         setHappiness(0);
         double a = Math.random();
         double b = Math.random();
+        double c;
         while (happiness < 1) {
             System.out.println(getName() + " подошла к слудующей " + flowerBed.getName() + " прополола её");
-            double c = Math.abs((a-b)/2);
+            c = Math.abs((a-b)/2);
             happiness += c;
             String str1 = String.format("%.0f", happiness*100);
             String str2 = String.format("%.0f", c*100);
@@ -386,22 +407,19 @@ public class Mary extends Character {
     public void dig() {
         String subject = stick.getName();
         String object = earth.getName();
-        System.out.println(getName() + " взяла " + stick.getName() + " и подкопала " + earth.getName() );
+        System.out.println(getName() + " взяла " + subject + " и подкопала " + object);
 
     }
 
     public void takeOffClothes() {
-        double a = 1;
-        double b = Math.random();
         setCondition(Condition.TOBEHOT);
         setMarysThings(MarysThings.COAT);
         System.out.println(getName() + " " + condition + " и " + getName() + " сбросила сначала " + marysThings);
-        while (a > b) {
-            setMarysThings(MarysThings.HAT);
-            System.out.println("дальше " + getName() + " сбросила" + marysThings);
-            a = Math.random();
-            b = Math.random();
-        }
+
+        setMarysThings(MarysThings.HAT);
+        System.out.println("Дальше " + getName() + " сбросила " + marysThings);
+
+
     }
 
     public void watchFromAfar (Garden.GardenPlants plantOne, Garden.GardenPlants plantTwo) {

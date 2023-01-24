@@ -19,9 +19,8 @@ public enum Condition {
         this.title = title;
     }
 
-    Condition() {
 
-    }
+
 
     @Override
     public String toString() {

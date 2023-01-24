@@ -17,7 +17,9 @@ public class Ben extends Character{
     }
 
     @Override
-    public String say(String subject, String sentence, Status status) {
+    public String say() {
+        String sentence = " об этом";
+        String subject = "Мэри";
         String phrase = "говорил " + subject + " " + sentence;
         setStatus(Status.MOUTHMOVEMENT);
         return phrase;
@@ -33,5 +35,6 @@ public class Ben extends Character{
 
     @Override
     public void canPlant() {
+        System.out.println(getName() + " сажал их");
     }
 }

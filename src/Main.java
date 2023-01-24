@@ -1,9 +1,5 @@
-import Characters.Ben;
-import Characters.Mary;
-import Characters.Woman;
-import enums.MarysThings;
-import enums.Smell;
-import enums.Status;
+import Characters.*;
+import enums.*;
 import garden.FlowerBed;
 import garden.Garden;
 import garden.GardenLandscape;
@@ -34,16 +30,22 @@ public class Main {
         plant.grow1();
 
         mary.remember();
+        Ben ben = new Ben("Бен", "");
+        ben.canPlant();
         mary.lookAt();
-        mary.whisper();
+        mary.say();
         mary.breath(25);
         mary.thinkWithHope();
         mary.actionWithJumpers(45, "");
 
         mary.goToGardenLandscape();
 
+        Iplantable craven = new Woman("Крейвен") {
+        };
+        craven.canPlant();
+
         mary.notice();
-        mary.say();
+        mary.sayWithWorry();
         mary.seem();
         mary.takeCareOfGarden();
         mary.pity();
@@ -52,6 +54,7 @@ public class Main {
         mary.dig();
 
         mary.weed();
+        mary.canToWeed();
 
         mary.lookAt2();
         mary.understand();
@@ -63,9 +66,7 @@ public class Main {
         mary.takeOffClothes();
 
 
-        //Iplantable craven = new Woman("Крейвен") {
-       // };
-        //craven.canPlant();
+
         // Mary mary = new Mary("Мэри");
         //mary.whisper();
         //mary.breath(45);

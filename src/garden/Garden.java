@@ -1,16 +1,11 @@
 package garden;
 
-import Characters.Character;
-import Characters.Mary;
-import enums.Seasons;
 
-import java.sql.SQLOutput;
+import enums.Seasons;
 import java.util.ArrayList;
-import java.util.List;
+
 
 public class Garden {
-
-    private List<Character> characters;
     private String name;
 
 
@@ -19,7 +14,7 @@ public class Garden {
     }
     private String leftPartOfGarden = "Левый край сада";
     private String rightPartOfGarden = "Правый край сада";
-    private double numberOfPlants = Math.random()*100;
+    private int numberOfPlants = (int) Math.ceil(Math.random()*100);
 
 
 
@@ -58,26 +53,26 @@ public class Garden {
         }
 
         public void blossom() {
-            int parameter = 3;
+            double parameter = Math.random()*8;
             int a = 2;
             int b = 4;
             int c = 6;
             while (blossom>0 && blossom <1) {
                 if(parameter<a) {
-                    blossom -= 0.3;
+                    blossom = 0;
                     setSeasons(Seasons.WINTER);
                     String str = String.format("%.0f", blossom*100);
-                    System.out.println("Если наступит " + seasons + ", то растений распустится на 30% меньше и останется: " + str + "%");
+                    System.out.println("Если наступит " + seasons + ", то растения не распустятся и останется: " + str + "% растений");
 
                 }
-                if (parameter>a && parameter<b) {
+                if (parameter>=a && parameter<b) {
                     blossom +=0.5;
                     setSeasons(Seasons.SPRING);
                     String str = String.format("%.0f", blossom*100);
                     System.out.println("Если наступит " + seasons + ", то растений распустится еще больше и станет: " + str + "%");
                 }
 
-                if(parameter>b && parameter<c) {
+                if(parameter>=b && parameter<c) {
                     blossom +=0.2;
                     setSeasons(Seasons.SUMMER);
                     String str = String.format("%.0f", blossom*100);
@@ -89,6 +84,7 @@ public class Garden {
                     setSeasons(Seasons.AUTUMN);
 
                 }
+                parameter = Math.random()*8;
 
             }
     }
@@ -157,8 +153,7 @@ public class Garden {
             System.out.println(getName() + " бродит по " + object);
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException
-                    e) {
+            } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
             System.out.println(getName() + " перешла из " + pointOfDeparture + " в " + pointOfDestination);
@@ -187,8 +182,9 @@ public class Garden {
     int numberOfLeaves = (int) Math.ceil(Math.random()*100);
     public void consistOnLeaves() {
         int i = 0;
+        String string;
         while (i < numberOfLeaves) {
-            String string = String.format("Лист%d", i);
+            string = String.format("Лист%d", i);
             grass.add(i, string);
             i++;
         }
